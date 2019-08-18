@@ -1,8 +1,10 @@
+# coding: utf-8
+
 import os
-os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
+#os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 import xlmhg
-import hgmd-v1 as hgmd
+import hgmd_v1 as hgmd
 import GenerateSyntheticExpressionMatrix as gsec
 import math  
 import pandas as pd
@@ -275,4 +277,3 @@ plt.ylim(-0.05,1.05)
 #plt.xlim([np.min(nrange)-10, np.max(nrange)])
 #plt.savefig('pvalueSampleSize-NB.eps', format='eps', dpi=1000,bbox_inches='tight')
 plt.show()
-

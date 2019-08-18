@@ -1,4 +1,6 @@
-# import re
+# coding: utf-8
+
+# import required packages
 import pandas as pd
 import numpy as np
 import xlmhg as hg

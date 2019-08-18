@@ -1,8 +1,10 @@
+# coding: utf-8
+
 import os
-os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
+#os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 import xlmhg
-import hgmd-v1 as hgmd
+import hgmd_v1 as hgmd
 import GenerateSyntheticExpressionMatrix as gsec
 import math  
 import pandas as pd
@@ -33,7 +35,6 @@ def LRT_LogReg(df):
     stat = 2*(ll1-ll0)
     pval = ss.chi2.sf(stat, 1)
     return(pval)
-    
 
 
 # # I. Fixed high sample size, Running Effect Size
@@ -170,7 +171,6 @@ ax1.set_ylabel('p-Value', fontsize = 20)
 #plt.savefig('pvalMeanDiff-Normal-Break.png', format='png', dpi=1000,bbox_inches='tight')
 plt.show()
 
-
 # # II. Running Sample Size, Fixed Small Mean Difference
 
 # Set seed
@@ -260,6 +260,3 @@ plt.ylim(-0.05,1.05)
 #plt.xlim([np.min(nrange)-10, np.max(nrange)])
 #plt.savefig('pvalSampleSize-Normal.png', format='png', dpi=1000,bbox_inches='tight')
 plt.show()
-
-
-

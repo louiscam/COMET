@@ -1,10 +1,12 @@
+# coding: utf-8
+
 import os
-os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
+#os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 # Standard packages
 import xlmhg
-import hgmd-v1 as hgmd
-import hgmd-v2 as new
+import hgmd_v1 as hgmd
+import hgmd_v2 as new
 import GenerateSyntheticExpressionMatrix as gsec
 import math  
 import pandas as pd
@@ -17,7 +19,6 @@ from matplotlib import cm
 import time
 from tqdm import tqdm
 import random
-import hgmd as comet
 
 # Classifiers
 from sklearn.preprocessing import scale
@@ -328,7 +329,6 @@ plt.legend(['Random Forest', 'Extra Trees'],loc = 'lower left', fontsize = 14)
 #plt.savefig('OOBvsPropPoorMark-MeanPoorMark30.png', format='png', dpi=1000, bbox_inches = 'tight')
 plt.show()
 
-
 # # Analyze performance of XL-mHG vs. Random Forest 3
 
 # Set seed
@@ -409,5 +409,4 @@ plt.ylabel('Out-of-Bag Error', fontsize = 20)
 plt.legend(['Random Forest', 'Extra Trees'],loc = 'upper left', fontsize = 14)
 #plt.savefig('OOBvsMeanPoorMark.png', format='png', dpi=1000, bbox_inches = 'tight')
 plt.show()
-
 

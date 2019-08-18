@@ -1,7 +1,9 @@
-import os
-os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
+# coding: utf-8
 
-import hgmd-v1 as hgmd
+import os
+#os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
+
+import hgmd_v1 as hgmd
 import pandas as pd
 import numpy as np
 import scipy.stats as ss

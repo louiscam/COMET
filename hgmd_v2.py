@@ -1,3 +1,5 @@
+# coding: utf-8
+
 """
 Set of modularized components of COMET's HGMD testing.
 
@@ -7,7 +9,7 @@ insignificant.  I.e. 15.001 and 15.000 are treated as equivalent expression
 values.
 """
 
-import re
+# import required packages
 
 import pandas as pd
 import numpy as np
