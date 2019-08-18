@@ -1,5 +1,5 @@
 import os
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
+os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 import xlmhg
 import hgmd-v1 as hgmd
@@ -16,8 +16,6 @@ from matplotlib import cm
 from matplotlib import gridspec
 import time
 from tqdm import tqdm
-
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/COMETFinalDraft/COMETDraftFiguresv4/Normal')
 
 # Likelihood Ratio Test for Logistic Regression
 

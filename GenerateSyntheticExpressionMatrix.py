@@ -1,5 +1,5 @@
 import os
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
+os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 import hgmd-v1 as hgmd
 import pandas as pd

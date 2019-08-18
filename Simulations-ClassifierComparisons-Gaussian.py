@@ -1,6 +1,5 @@
 import os
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
-#os.chdir(os.path.dirname(os.path.realpath(__file__)))
+os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 # Standard packages
 import xlmhg
@@ -28,11 +27,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import log_loss
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
-
-
-# os.path.dirname(os.path.realpath(__file__))
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/COMETFinalDraft/COMETDraftFiguresv4')
-
 
 # # Generate Expression Matrix
 

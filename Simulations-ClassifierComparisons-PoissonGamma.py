@@ -1,6 +1,5 @@
 import os
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
-#os.chdir(os.path.dirname(os.path.realpath(__file__)))
+os.chdir('/‎⁨Users⁩/louis.cammarata⁩/Documents⁩/ResearchProjects⁩/⁨2018⁩/COMET⁩/COMET-Simulations⁩')
 
 # Standard packages
 import xlmhg
@@ -34,9 +33,6 @@ from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import scale
-
-os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/COMETFinalDraft/COMETDraftFiguresv4')
-
 
 # # Generate Expression Matrix
 
