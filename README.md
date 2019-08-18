@@ -1,5 +1,5 @@
 # COMET
-This repository contains scripts for the simulations implemented in the COMET article by Delaney, C., Schnell, A., Cammarata, L., Yao-Smith, A., Regev, A., Kuchroo, V. K., \& Singer, M. (2019). The article can be found at https://www.biorxiv.org/content/10.1101/655753v1. Documentation on the COMET Python package is available at https://hgmd.readthedocs.io/en/latest/index.html. Simulation figures in the COMET article can be reproduced using the scripts below.
+This repository contains scripts for the simulations implemented in the COMET article by Delaney, C., Schnell, A., Cammarata, L., Yao-Smith, A., Regev, A., Kuchroo, V. K., \& Singer, M. (2019). The pre-print can be found at https://www.biorxiv.org/content/10.1101/655753v1. Documentation on the COMET Python package is available at https://hgmd.readthedocs.io/en/latest/index.html. Simulation figures in the COMET article can be reproduced using the scripts below.
 
 * hgmd-v1.py and hgmd-v2.py are modified versions of the COMET script (https://github.com/Cnrdelaney/HG_marker_detection.git) for simulation purposes.
 * GenerateSyntheticExpressionMatrix.py generates Gaussian expression values for one gene in many cells. This script is used in Simulations-TestComparisons-Normal.py and Simulations-TestComparisons-NegBin.py.
