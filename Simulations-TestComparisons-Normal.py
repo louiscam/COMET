@@ -1,13 +1,8 @@
-
-# coding: utf-8
-
-# In[1]:
-
 import os
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
 
 import xlmhg
-import hgmd_code as hgmd
+import hgmd-v1 as hgmd
 import GenerateSyntheticExpressionMatrix as gsec
 import math  
 import pandas as pd
@@ -22,13 +17,7 @@ from matplotlib import gridspec
 import time
 from tqdm import tqdm
 
-
-# In[21]:
-
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/COMETFinalDraft/COMETDraftFiguresv4/Normal')
-
-
-# In[3]:
 
 # Likelihood Ratio Test for Logistic Regression
 
@@ -50,8 +39,6 @@ def LRT_LogReg(df):
 
 
 # # I. Fixed high sample size, Running Effect Size
-
-# In[10]:
 
 # Set seed
 np.random.seed(13)
@@ -126,7 +113,6 @@ plt.xscale('log')
 plt.legend( [ "0.05", "t", "WRS","KS", "LRT (LR)","XL-mHG" ],bbox_to_anchor=(1.04,0.5), loc="center left", borderaxespad=0)
 #plt.savefig('pvalMeanDiff-Normal.eps', format='eps', dpi=1000,bbox_inches='tight')
 plt.show()
-# In[14]:
 
 # Figure with broken axes
 #f,(ax1,ax2) = plt.subplots(1,2,sharey=True, facecolor='w')
@@ -188,8 +174,6 @@ plt.show()
 
 
 # # II. Running Sample Size, Fixed Small Mean Difference
-
-# In[19]:
 
 # Set seed
 np.random.seed(13)
@@ -257,8 +241,6 @@ for n in tqdm(nrange):
 
 # # Plot p-value vs. Sample Size for the 3 different tests
 
-# In[23]:
-
 # Plot p-value vs. Sample Size for the 3 different tests¶
 f = plt.figure(figsize=(8, 6)) 
 plt.plot([np.min(nrange), np.max(nrange)], [0.05, 0.05], 'k-', lw=0.5)
@@ -280,9 +262,6 @@ plt.ylim(-0.05,1.05)
 #plt.xlim([np.min(nrange)-10, np.max(nrange)])
 #plt.savefig('pvalSampleSize-Normal.png', format='png', dpi=1000,bbox_inches='tight')
 plt.show()
-
-
-# In[ ]:
 
 
 

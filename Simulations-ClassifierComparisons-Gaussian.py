@@ -1,16 +1,11 @@
-
-# coding: utf-8
-
-# In[61]:
-
 import os
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
 #os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 # Standard packages
 import xlmhg
-import hgmd_code as hgmd
-import new_hgmd as new
+import hgmd-v1 as hgmd
+import hgmd-v2 as new
 import GenerateSyntheticExpressionMatrix as gsec
 import math  
 import pandas as pd
@@ -36,15 +31,10 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 # os.path.dirname(os.path.realpath(__file__))
-
-# In[44]:
-
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/COMETFinalDraft/COMETDraftFiguresv4')
 
 
 # # Generate Expression Matrix
-
-# In[26]:
 
 # Shuffle function (shuffles elements of each row in a matrix within a specific column range)
 
@@ -61,9 +51,6 @@ def shuffle(a,lim):
     # Reasemble a1 and a2
     a = np.concatenate((a1,a2),axis=1)
     return(a)
-
-
-# In[27]:
 
 # Create generating function
 
@@ -104,8 +91,6 @@ def simulateExpMatrix(n_genes, n_goodmark, n_badmark,
 
 # # Visualize expression matrix
 
-# In[28]:
-
 # Set seed
 np.random.seed(13)
 
@@ -131,9 +116,6 @@ df = simulateExpMatrix(n_genes, n_goodmark, n_badmark,
                        e_good, e_bad,
                        p)
 
-
-# In[29]:
-
 # Plot heatmap of model expression matrix
 X = np.matrix(df.drop('cluster', axis=1))[:3*n_cells1,0:2*(n_goodmark+n_badmark)]
 f = plt.figure(figsize=(10, 5)) 
@@ -148,8 +130,6 @@ plt.show()
 
 
 # # Marker detection with XL-mHG
-
-# In[30]:
 
 def compute_mHG_SOR(df):
     # Define parameters
@@ -170,8 +150,6 @@ def compute_mHG_SOR(df):
 
 
 # # Marker detection with Random Forest
-
-# In[31]:
 
 # Define function
 
@@ -198,8 +176,6 @@ def compute_RF_SOR(df):
 
 # # Marker detection with Extra Trees Classifiers
 
-# In[32]:
-
 # Define function
 
 def compute_XT_SOR(df):
@@ -225,8 +201,6 @@ def compute_XT_SOR(df):
 
 # # Marker detection with Logistic Regression
 
-# In[33]:
-
 # Likelihood Ratio Test for Logistic Regression
 
 def LRT_LogReg(X,y):
@@ -241,10 +215,6 @@ def LRT_LogReg(X,y):
     #pval = ss.chi2.sf(stat, 1)
     return(stat)
     
-
-
-# In[35]:
-
 def compute_LR_SOR(df):
     # Define model matrix and response
     X = np.matrix(df.drop('cluster', axis=1))
@@ -285,8 +255,6 @@ def compute_LR_SOR_original(df):
     SOR_lr = np.sum(ranks_goodmark)/np.sum(np.arange(n_goodmark))      
     return(SOR_lr)
 # # Analyze performance of XL-mHG vs. Random Forest 1
-
-# In[41]:
 
 # Set seed
 np.random.seed(13)
@@ -345,9 +313,6 @@ for pb in tqdm(pb_range):
     sd_oob_xt.append(np.var(tmp_oob_xt)**0.5)
     sd_lr.append(np.var(tmp_lr)**0.5)
 
-
-# In[46]:
-
 # Plot results
 plt.errorbar(pb_range,SOR_mhg,yerr = sd_mhg,color='blue',fmt = 'o')
 plt.errorbar(pb_range,SOR_rf,yerr = sd_rf,color='orange',fmt = 'o')
@@ -360,9 +325,6 @@ plt.legend(['XL-mHG','Random Forest', 'Extra Trees','Logistic regression'],loc =
 #plt.savefig('SSRvsPropPoorMark-MeanPoorMark30.eps', format='eps', dpi=1000, bbox_inches = 'tight')
 plt.show()
 
-
-# In[48]:
-
 # Plot OOB
 plt.errorbar(pb_range,1-np.array(oob_rf),yerr = sd_oob_rf,color='orange',fmt = 'o')
 plt.errorbar(pb_range,1-np.array(oob_xt),yerr = sd_oob_xt,color='red',fmt = 'o')
@@ -374,8 +336,6 @@ plt.show()
 
 
 # # Analyze performance of XL-mHG vs. Random Forest 3
-
-# In[52]:
 
 # Set seed
 np.random.seed(13)
@@ -434,9 +394,6 @@ for e_bad in tqdm(e_bad_range):
     sd_oob_xt.append(np.var(tmp_oob_xt)**0.5)
     sd_lr.append(np.var(tmp_lr)**0.5)
 
-
-# In[60]:
-
 # Plot results
 plt.errorbar(e_bad_range,SOR_mhg,yerr = sd_mhg,color='blue',fmt = 'o')
 plt.errorbar(e_bad_range,SOR_rf,yerr = sd_rf,color='orange',fmt = 'o')
@@ -450,9 +407,6 @@ plt.legend(['XL-mHG','Random Forest', 'Extra Trees','Logistic Regression'],loc='
 #plt.savefig('SSRvsMeanPoorMark.eps', format='eps', dpi=1000, bbox_inches = 'tight')
 plt.show()
 
-
-# In[56]:
-
 # Plot OOB
 plt.errorbar(e_bad_range,1-np.array(oob_rf),yerr = sd_oob_rf,color='orange',fmt = 'o')
 plt.errorbar(e_bad_range,1-np.array(oob_xt),yerr = sd_oob_xt,color='red',fmt = 'o')
@@ -461,9 +415,5 @@ plt.ylabel('Out-of-Bag Error', fontsize = 20)
 plt.legend(['Random Forest', 'Extra Trees'],loc = 'upper left', fontsize = 14)
 #plt.savefig('OOBvsMeanPoorMark.png', format='png', dpi=1000, bbox_inches = 'tight')
 plt.show()
-
-
-# In[ ]:
-
 
 

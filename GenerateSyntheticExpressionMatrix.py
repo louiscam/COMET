@@ -1,7 +1,7 @@
 import os
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
 
-import hgmd_code as hgmd
+import hgmd-v1 as hgmd
 import pandas as pd
 import numpy as np
 import scipy.stats as ss

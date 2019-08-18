@@ -1,13 +1,8 @@
-
-# coding: utf-8
-
-# In[2]:
-
 import os
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/Data')
 
 import xlmhg
-import hgmd_code as hgmd
+import hgmd-v1 as hgmd
 import GenerateSyntheticExpressionMatrix as gsec
 import math  
 import pandas as pd
@@ -22,13 +17,8 @@ from matplotlib import cm
 import time
 from tqdm import tqdm
 
-
-# In[3]:
-
 os.chdir('/Users/louis.cammarata/Documents/Harvard/Fall2018/Research/COMETFinalDraft/COMETDraftFiguresv4/NB')
 
-
-# In[4]:
 
 # Likelihood Ratio Test for Logistic Regression
 
@@ -49,8 +39,6 @@ def LRT_LogReg(df):
 
 
 # # Visualize Data
-
-# In[5]:
 
 # Set seed
 np.random.seed(13)
@@ -74,17 +62,10 @@ plt.title('Data Histogram ('+str(n_cells)+' cells)')
 plt.xlabel('Transcript count', fontsize = 20)
 plt.ylabel('Number of cells', fontsize = 20)
 plt.legend( [ "Cluster 1","Cluster 0" ], loc = "upper right", fontsize = 14)
-#plt.savefig('pvalueMeanDiff-NB-Hist-Outliers.eps', format='eps', dpi=1000)
+#plt.savefig('pvalueMeanDiff-NB-Hist.eps', format='eps', dpi=1000)
 plt.show()
 
-
-# c1n=r, c1p=p
-# c0n=1
-# c0p=2
-
 # # I. Fixed high sample size, Running Effect Size
-
-# In[8]:
 
 # Set seed
 np.random.seed(13)
@@ -143,9 +124,6 @@ for e in tqdm(epsilon_range):
     ks_pv_sd.append(np.var(ks)**0.5)
     lr_pv.append(np.mean(lr))
     lr_pv_sd.append(np.var(lr)**0.5)
-
-
-# In[12]:
 
 meandiff_range = c1_n*(1-c1_p)/c1_p-c0_n*(1-c0_p)/c0_p+epsilon_range
 # Plot p-value vs. True Effect Size Across Clusters for the 3 different tests¶
@@ -213,8 +191,6 @@ plt.show()
 
 # # II. Running Sample Size, Fixed Small Mean Difference
 
-# In[14]:
-
 # Set seed
 np.random.seed(13)
 
@@ -281,8 +257,6 @@ for n in tqdm(nrange):
 
 # # Plot p-value vs. Sample Size for the 3 different tests
 
-# In[17]:
-
 # Plot p-value vs. Sample Size for the 3 different tests¶
 f = plt.figure(figsize=(8, 6)) 
 plt.plot([np.min(nrange), np.max(nrange)], [0.05, 0.05], 'k-', lw=0.5)
@@ -304,9 +278,4 @@ plt.ylim(-0.05,1.05)
 #plt.xlim([np.min(nrange)-10, np.max(nrange)])
 #plt.savefig('pvalueSampleSize-NB.eps', format='eps', dpi=1000,bbox_inches='tight')
 plt.show()
-
-
-# In[ ]:
-
-
 
